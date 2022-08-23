@@ -1,0 +1,55 @@
+:root {
+	--fel-col-grad1: #24ff5f;
+	--fel-col-grad2: #ff24c4;
+}
+
+@keyframes background-grad-move {
+	from {
+		background-position: center 0%;
+	}
+	to {
+		background-position: center -200%;
+	}
+}
+
+body {
+	animation: background-grad-move 5s linear infinite;
+	background-image: linear-gradient(
+		to bottom,
+		var(--fel-col-grad1),
+		var(--fel-col-grad2),
+		var(--fel-col-grad1)
+	);
+	background-size: 200% 200%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.tile-container {
+	width: calc(100% - 1px);
+	height: calc(100% - 1px);
+	display: grid;
+	/* position: relative; */
+	grid-template-rows: repeat(var(--fel-rows), 1fr);
+	grid-template-columns: repeat(var(--fel-columns), 1fr);
+}
+
+.tile {
+	position: relative;
+	cursor: pointer;
+}
+
+.tile:hover::before {
+	background-color: rgb(20, 20, 20);
+}
+
+.tile::before {
+	content: "";
+	background-color: rgb(10, 10, 10);
+	position: absolute;
+	inset: 1px;
+}
+
+body > .tile-container > .tile:hover {
+	opacity: 0.1;
+}
