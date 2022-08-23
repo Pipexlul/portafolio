@@ -50,6 +50,6 @@ body {
 	inset: 1px;
 }
 
-body > .tile-container > .tile:hover {
-	opacity: 0.1;
+body.toggled > .tile-container > .tile:hover {
+	opacity: 0.1 !important;
 }
