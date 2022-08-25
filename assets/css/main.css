@@ -28,8 +28,6 @@ body {
 .tile-container {
 	width: calc(100% - 1px);
 	height: calc(100% - 1px);
-	display: grid;
-	/* position: relative; */
 	grid-template-rows: repeat(var(--fel-rows), 1fr);
 	grid-template-columns: repeat(var(--fel-columns), 1fr);
 }
