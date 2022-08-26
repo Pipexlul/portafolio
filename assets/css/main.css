@@ -6,6 +6,10 @@
 
 	--fel-col-grad1-toggle: #0f0f0f;
 	--fel-col-grad2-toggle: #2c2c2c;
+
+	--fel-col-splash-text-delay1: 350;
+	--fel-col-splash-text-delay2: 250;
+	--fel-col-splash-text-delay3: 100;
 }
 
 body {
@@ -19,6 +23,11 @@ body {
 	to {
 		background-position: center -200%;
 	}
+}
+
+.splash-name > span {
+	top: 10vh;
+	opacity: 0; /*Can't use bootstrap's opacity-0 because it has !important set */
 }
 
 .whole-viewport {
@@ -71,7 +80,7 @@ body {
 }
 
 .toggled-bg {
-	animation: background-grad-move 5s linear infinite;
+	animation: background-grad-move 15s linear infinite;
 	background-image: linear-gradient(
 		to bottom,
 		var(--fel-col-grad1-toggle),
