@@ -1,10 +1,13 @@
-// import anime from "./anime.min.js";
+const splashScreen = document.querySelector(".splash-screen");
+const toggledBg = document.querySelector(".toggled-bg");
+const h1Text = document.querySelector("h1");
+const splashNames = document.querySelectorAll(".splash-name");
 
-const body = document.body;
 const tileContainer = document.querySelector(".tile-container");
 const tileSize = 60;
 
 let toggled = false;
+let isAnimatingTiles = false;
 
 const removeAllChildren = (node) => {
 	let child = node.firstElementChild;
@@ -19,18 +22,36 @@ const toggleElemOpacity = (elem, toggleVal) => {
 };
 
 const tileClick = (ev, index, rows, columns) => {
-	toggled = !toggled;
-	body.classList.toggle("toggled");
+	if (!isAnimatingTiles) {
+		toggled = !toggled;
+		splashScreen.classList.toggle("toggled");
 
-	anime({
-		targets: ".tile",
-		opacity: toggled ? 0 : 1,
-		duration: 1500,
-		delay: anime.stagger(60, {
-			grid: [columns, rows],
-			from: index,
-		}),
-	});
+		anime({
+			targets: ".tile",
+			opacity: toggled ? 0 : 1,
+			duration: 500,
+			delay: anime.stagger(250, {
+				grid: [columns, rows],
+				from: index,
+			}),
+			easing: "linear",
+
+			begin: (anim) => {
+				isAnimatingTiles = true;
+				// console.log("Animating tiles");
+			},
+
+			complete: (anim) => {
+				isAnimatingTiles = false;
+				// console.log("Stopped Animating tiles");
+			},
+
+			update: (anim) => {
+				const progress = anim.progress / 100;
+				toggledBg.style.opacity = toggled ? progress : 1 - progress;
+			},
+		});
+	}
 };
 
 const createTile = (index, rows, columns) => {
@@ -53,10 +74,10 @@ const createTileGroup = (rows, columns) => {
 const createGrid = () => {
 	removeAllChildren(tileContainer);
 
-	const realSize = body.clientWidth > 1000 ? tileSize * 2 : tileSize;
+	const realSize = splashScreen.clientWidth > 1000 ? tileSize * 2 : tileSize;
 
-	const rows = Math.floor(body.clientHeight / realSize);
-	const columns = Math.floor(body.clientWidth / realSize);
+	const rows = Math.floor(splashScreen.clientHeight / realSize);
+	const columns = Math.floor(splashScreen.clientWidth / realSize);
 
 	tileContainer.style.setProperty("--fel-rows", rows);
 	tileContainer.style.setProperty("--fel-columns", columns);

@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
+
 :root {
 	--fel-col-grad1: #24ff5f;
 	--fel-col-grad2: #ff24c4;
+
+	--fel-col-grad1-toggle: #0f0f0f;
+	--fel-col-grad2-toggle: #2c2c2c;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
 }
 
 @keyframes background-grad-move {
@@ -12,7 +21,16 @@
 	}
 }
 
-body {
+.whole-viewport {
+	width: 100vw;
+	height: 100vh;
+}
+
+.non-clickable {
+	pointer-events: none;
+}
+
+.splash-screen {
 	animation: background-grad-move 5s linear infinite;
 	background-image: linear-gradient(
 		to bottom,
@@ -48,6 +66,19 @@ body {
 	inset: 1px;
 }
 
-body.toggled > .tile-container > .tile:hover {
+.splash-screen.toggled > .tile-container > .tile:hover {
 	opacity: 0.1 !important;
+}
+
+.toggled-bg {
+	animation: background-grad-move 5s linear infinite;
+	background-image: linear-gradient(
+		to bottom,
+		var(--fel-col-grad1-toggle),
+		var(--fel-col-grad2-toggle),
+		var(--fel-col-grad1-toggle)
+	);
+	background-size: 200% 200%;
+	overflow: hidden;
+	opacity: 0; /*Can't use bootstrap's opacity-0 because it has !important set */
 }
