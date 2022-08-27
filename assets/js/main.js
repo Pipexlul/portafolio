@@ -72,7 +72,7 @@ const firstClick = () => {
 	});
 
 	const clickableElements = document.querySelectorAll(
-		".navbar, .container > .row"
+		".navbar, .container > .row, footer"
 	);
 	clickableElements.forEach((elem, idx) => {
 		elem.classList.add("make-clickable");

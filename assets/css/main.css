@@ -171,3 +171,11 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.footer-container {
+	background-image: linear-gradient(
+		to right,
+		var(--fel-progress-grad1),
+		var(--fel-progress-grad2)
+	);
+}
