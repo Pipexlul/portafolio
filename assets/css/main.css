@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
 
-:root {
+:root,
+::before {
 	--fel-col-grad1: #24ff5f;
 	--fel-col-grad2: #ff24c4;
 
@@ -13,6 +14,8 @@
 
 	--fel-progress-grad1: rgb(84, 231, 79);
 	--fel-progress-grad2: rgb(71, 105, 218);
+	--fel-progress-grad1-alpha: rgba(84, 231, 79, 0.75);
+	--fel-progress-grad2-alpha: rgb(71, 105, 218, 0.75);
 }
 
 body {
@@ -132,4 +135,39 @@ body {
 
 .content {
 	opacity: 0;
+}
+
+.link-img-github::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: linear-gradient(
+		to bottom right,
+		var(--fel-progress-grad1-alpha),
+		var(--fel-progress-grad2-alpha)
+	);
+	transition: opacity 1s;
+	opacity: 0;
+}
+
+.link-img-github:hover::before {
+	opacity: 1;
+}
+
+.link-img-github-after {
+	top: 0px;
+	left: 0px;
+	transition: opacity 750ms;
+	opacity: 0;
+}
+
+.link-img-github-after:hover {
+	opacity: 1;
+}
+
+.link-img-github-icon {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

@@ -36,7 +36,7 @@ const progData = {
 	},
 };
 
-const isDebugging = false;
+const isDebugging = true;
 
 let toggled = false;
 let isAnimatingTiles = false;
@@ -262,6 +262,5 @@ document.addEventListener("scroll", handleProgBarsVisible);
 handleProgBarsVisible();
 
 if (isDebugging) {
-	document.querySelector(".toggled-bg").style.opacity = 1;
-	document.querySelector(".splash-screen").remove();
+	firstClick();
 }
