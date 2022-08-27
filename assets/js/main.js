@@ -1,9 +1,42 @@
 const splashScreen = document.querySelector(".splash-screen");
-const toggledBg = document.querySelector(".toggled-bg");
+// const toggledBg = document.querySelector(".toggled-bg");
 const splashNames = document.querySelectorAll(".splash-name > span");
 
 const tileContainer = document.querySelector(".tile-container");
 const tileSize = 60;
+
+const progData = {
+	lua: {
+		elem: document.querySelector("#progress-lua"),
+		known: 85,
+	},
+	c: {
+		elem: document.querySelector("#progress-c"),
+		known: 80,
+	},
+	cpp: {
+		elem: document.querySelector("#progress-cpp"),
+		known: 60,
+	},
+	cs: {
+		elem: document.querySelector("#progress-cs"),
+		known: 43,
+	},
+	js: {
+		elem: document.querySelector("#progress-js"),
+		known: 50,
+	},
+	ts: {
+		elem: document.querySelector("#progress-ts"),
+		known: 8,
+	},
+	go: {
+		elem: document.querySelector("#progress-go"),
+		known: 14,
+	},
+};
+
+const isDebugging = false;
 
 let toggled = false;
 let isAnimatingTiles = false;
@@ -29,6 +62,20 @@ const firstClick = () => {
 		top: "-20vh",
 		opacity: 0,
 		duration: 1000,
+	});
+
+	anime({
+		targets: ".content",
+		easing: "linear",
+		opacity: 1,
+		duration: 1000,
+	});
+
+	const clickableElements = document.querySelectorAll(
+		".navbar, .container > .row"
+	);
+	clickableElements.forEach((elem, idx) => {
+		elem.classList.add("make-clickable");
 	});
 };
 
@@ -57,9 +104,38 @@ const tileClick = (ev, index, rows, columns) => {
 				// console.log("Stopped Animating tiles");
 			},
 
-			update: (anim) => {
-				const progress = anim.progress / 100;
-				toggledBg.style.opacity = toggled ? progress : 1 - progress;
+			// update: (anim) => {
+			// 	const progress = anim.progress / 100;
+			// 	toggledBg.style.opacity = toggled ? progress : 1 - progress;
+			// },
+		});
+
+		if (!didFirstClick) {
+			firstClick();
+			didFirstClick = true;
+		}
+	}
+};
+
+const tileClickOneOff = (ev, index, rows, columns) => {
+	if (!isAnimatingTiles && didRolloutIntro) {
+		anime({
+			targets: ".tile",
+			opacity: [
+				{ value: 0, duration: 500, easing: "easeOutSine" },
+				{ value: 1, duration: 500, delay: 250, easing: "easeInSine" },
+			],
+			delay: anime.stagger(250, {
+				grid: [columns, rows],
+				from: index,
+			}),
+
+			begin: (anim) => {
+				isAnimatingTiles = true;
+			},
+
+			complete: (anim) => {
+				isAnimatingTiles = false;
 			},
 		});
 
@@ -74,9 +150,11 @@ const createTile = (index, rows, columns) => {
 	const tile = document.createElement("div");
 	tile.classList.add("tile");
 
-	toggleElemOpacity(tile, toggled);
+	// toggleElemOpacity(tile, toggled);
 
-	tile.addEventListener("click", (ev) => tileClick(ev, index, rows, columns));
+	tile.addEventListener("click", (ev) =>
+		tileClickOneOff(ev, index, rows, columns)
+	);
 
 	return tile;
 };
@@ -150,7 +228,40 @@ const firstRun = () => {
 		);
 };
 
+const isElemenInViewport = (element) => {
+	const boundingRect = element.getBoundingClientRect();
+
+	return (
+		boundingRect.top >= 0 &&
+		boundingRect.bottom <= document.documentElement.clientHeight
+	);
+};
+
+const handleProgBarsVisible = (ev) => {
+	for (const lang in progData) {
+		const cur = progData[lang];
+
+		if (!cur.found && isElemenInViewport(cur.elem)) {
+			anime({
+				targets: cur.elem,
+				width: cur.known + "%",
+				duration: 1000,
+				easing: "easeInQuad",
+			});
+			cur.found = true;
+		}
+	}
+};
+
 createGrid();
 
 window.addEventListener("resize", createGrid);
 window.addEventListener("DOMContentLoaded", firstRun);
+
+document.addEventListener("scroll", handleProgBarsVisible);
+handleProgBarsVisible();
+
+if (isDebugging) {
+	document.querySelector(".toggled-bg").style.opacity = 1;
+	document.querySelector(".splash-screen").remove();
+}

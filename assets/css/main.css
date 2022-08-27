@@ -10,6 +10,9 @@
 	--fel-col-splash-text-delay1: 350;
 	--fel-col-splash-text-delay2: 250;
 	--fel-col-splash-text-delay3: 100;
+
+	--fel-progress-grad1: rgb(84, 231, 79);
+	--fel-progress-grad2: rgb(71, 105, 218);
 }
 
 body {
@@ -37,6 +40,10 @@ body {
 
 .non-clickable {
 	pointer-events: none;
+}
+
+.make-clickable {
+	pointer-events: auto;
 }
 
 .splash-screen {
@@ -79,15 +86,50 @@ body {
 	opacity: 0.1 !important;
 }
 
-.toggled-bg {
-	animation: background-grad-move 15s linear infinite;
+/* .toggled-bg {
+    animation: background-grad-move 15s linear infinite;
+    background-image: linear-gradient(
+        to bottom,
+        var(--fel-col-grad1-toggle),
+        var(--fel-col-grad2-toggle),
+        var(--fel-col-grad1-toggle)
+    );
+    background-size: 200% 200%;
+    overflow: hidden;
+    opacity: 0;
+} */
+
+.navbar {
+	height: 100px;
+}
+
+.section-container {
+	border-radius: 30px;
+	box-shadow: 0px 0px 10px lightgreen;
+}
+
+.separator {
+	height: 300px;
+}
+
+.progress-outline {
+	border: 1px solid #303030;
+	border-radius: 10px;
+	padding: 3px;
+}
+
+.progress {
+	height: 10px;
+}
+
+.progress-bar {
 	background-image: linear-gradient(
-		to bottom,
-		var(--fel-col-grad1-toggle),
-		var(--fel-col-grad2-toggle),
-		var(--fel-col-grad1-toggle)
+		to right,
+		var(--fel-progress-grad1),
+		var(--fel-progress-grad2)
 	);
-	background-size: 200% 200%;
-	overflow: hidden;
-	opacity: 0; /*Can't use bootstrap's opacity-0 because it has !important set */
+}
+
+.content {
+	opacity: 0;
 }
