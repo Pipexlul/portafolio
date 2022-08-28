@@ -256,7 +256,7 @@ const handleProgBarsVisible = (ev) => {
 };
 
 const checkFixedNavbar = () => {
-	if (document.documentElement.scrollTop > navbarElem.clientHeight) {
+	if (document.documentElement.scrollTop >= navbarElem.clientHeight) {
 		navbarElem.classList.add("navbar-fixed", "position-fixed");
 	} else {
 		navbarElem.classList.remove("navbar-fixed", "position-fixed");
