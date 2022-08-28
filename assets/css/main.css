@@ -8,9 +8,9 @@
 	--fel-col-grad1-toggle: #0f0f0f;
 	--fel-col-grad2-toggle: #2c2c2c;
 
-	--fel-col-splash-text-delay1: 350;
-	--fel-col-splash-text-delay2: 250;
-	--fel-col-splash-text-delay3: 100;
+	--fel-col-splash-text-delay1: 250;
+	--fel-col-splash-text-delay2: 50;
+	--fel-col-splash-text-delay3: 50;
 
 	--fel-progress-grad1: rgb(84, 231, 79);
 	--fel-progress-grad2: rgb(71, 105, 218);

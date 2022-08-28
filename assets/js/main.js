@@ -197,7 +197,7 @@ const firstRun = () => {
 
 	const animation = anime.timeline({
 		easing: "linear",
-		duration: 750,
+		duration: 450,
 	});
 
 	animation
