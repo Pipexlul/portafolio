@@ -1,3 +1,4 @@
+const body = document.body;
 const splashScreen = document.querySelector(".splash-screen");
 // const toggledBg = document.querySelector(".toggled-bg");
 const splashNames = document.querySelectorAll(".splash-name > span");
@@ -79,6 +80,8 @@ const firstClick = () => {
 	clickableElements.forEach((elem, idx) => {
 		elem.classList.add("make-clickable");
 	});
+
+	body.classList.remove("prevent-scroll");
 };
 
 const tileClick = (ev, index, rows, columns) => {
@@ -264,6 +267,9 @@ const checkFixedNavbar = () => {
 };
 
 createGrid();
+
+window.scrollTo(0, 0);
+body.classList.add("prevent-scroll");
 
 window.addEventListener("resize", createGrid);
 window.addEventListener("DOMContentLoaded", firstRun);
