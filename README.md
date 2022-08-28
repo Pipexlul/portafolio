@@ -12,4 +12,4 @@ Todo...
 
 Edita el archivo libro-de-visitas.html, te recomiendo usar el template para agregar tu mensaje!
 
-[aqui]: https://placeholder.com/
+[aqui]: https://pipexlul.github.io/portafolio/
