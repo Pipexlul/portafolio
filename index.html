@@ -21,7 +21,7 @@
 		<script src="assets/js/anime.min.js" defer></script>
 		<script src="assets/js/main.js" defer></script>
 	</head>
-	<body>
+	<body data-bs-spy="scroll" data-bs-target="#main-navbar">
 		<div class="splash-screen whole-viewport position-fixed">
 			<div class="tile-container d-grid position-fixed"></div>
 			<div
@@ -41,7 +41,7 @@
 		<!-- <div class="toggled-bg whole-viewport position-fixed non-clickable"></div> -->
 
 		<div class="content position-relative non-clickable">
-			<nav class="navbar navbar-expand-lg navbar-dark">
+			<nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark">
 				<div class="container-fluid ps-4">
 					<h2 class="navbar-brand fs-2">Felipe Guajardo</h2>
 					<button
@@ -55,16 +55,16 @@
 					<div class="collapse navbar-collapse" id="navbar-collapse-menu">
 						<ul class="navbar-nav ms-auto">
 							<li class="nav-item">
-								<a href="#" class="nav-link fs-4">Sobre mi</a>
+								<a href="#about-me" class="nav-link fs-4">Sobre mi</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link fs-4">Habilidades</a>
+								<a href="#skills" class="nav-link fs-4">Habilidades</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link fs-4">Desafíos</a>
+								<a href="#challenges" class="nav-link fs-4">Desafíos</a>
 							</li>
 							<li class="nav-item">
-								<a href="#" class="nav-link fs-4">Proyectos</a>
+								<a href="#projects" class="nav-link fs-4">Proyectos</a>
 							</li>
 							<li class="nav-item">
 								<a href="./libro-de-visitas.html" class="nav-link fs-4"
