@@ -82,6 +82,10 @@ const firstClick = () => {
 	});
 
 	body.classList.remove("prevent-scroll");
+
+	new bootstrap.ScrollSpy(body, {
+		target: "#main-navbar",
+	});
 };
 
 const tileClick = (ev, index, rows, columns) => {
