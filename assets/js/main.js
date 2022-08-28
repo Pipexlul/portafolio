@@ -38,7 +38,7 @@ const progData = {
 	},
 };
 
-const isDebugging = true;
+const isDebugging = false;
 
 let toggled = false;
 let isAnimatingTiles = false;
