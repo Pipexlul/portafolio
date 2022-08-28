@@ -1,13 +1,15 @@
-# Portafolio Felipe Guajardo
+# Portafolio de Felipe Guajardo
 
-## Descripción proyecto
+## Ver proyecto
 
-Todo...
+Haz click [aqui]!
 
 ## Proyectos forkeados de compañeros
 
 Todo...
 
-## Archivos para modificar
+## Archivo para modificar
 
-Todo...
+Edita el archivo libro-de-visitas.html, te recomiendo usar el template para agregar tu mensaje!
+
+[aqui]: https://placeholder.com/

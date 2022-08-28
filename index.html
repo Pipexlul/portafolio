@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portafolio Felipe Guajardo</title>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<script
+			src="https://kit.fontawesome.com/a13a266165.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="assets/js/anime.min.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+	</head>
+	<body data-bs-spy="scroll" data-bs-target="#main-navbar">
+		<div class="splash-screen whole-viewport position-fixed">
+			<div class="tile-container d-grid position-fixed"></div>
+			<div
+				class="splash-text w-100 h-100 d-flex justify-content-center align-items-center position-relative non-clickable"
+			>
+				<h2
+					class="splash-name text-center fw-semibold text-light position-relative h1"
+				>
+					<span class="position-relative">Portafolio</span>
+					<br />
+					<span class="position-relative"> Felipe </span>
+					<span class="position-relative"> Guajardo </span>
+				</h2>
+			</div>
+		</div>
+
+		<!-- <div class="toggled-bg whole-viewport position-fixed non-clickable"></div> -->
+
+		<div class="content position-relative non-clickable">
+			<nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark">
+				<div class="container-fluid ps-4">
+					<h2 class="navbar-brand fs-2">Felipe Guajardo</h2>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbar-collapse-menu"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbar-collapse-menu">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a href="#about-me" class="nav-link fs-4">Sobre mi</a>
+							</li>
+							<li class="nav-item">
+								<a href="#skills" class="nav-link fs-4">Habilidades</a>
+							</li>
+							<li class="nav-item">
+								<a href="#challenges" class="nav-link fs-4">Desafíos</a>
+							</li>
+							<li class="nav-item">
+								<a href="#projects" class="nav-link fs-4">Proyectos</a>
+							</li>
+							<li class="nav-item">
+								<a href="./libro-de-visitas.html" class="nav-link fs-4"
+									>Libro de visitas</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="separator"></div>
+			<main class="position-relative">
+				<section>
+					<a href="" id="about-me" class="nav-anchor"></a>
+					<div class="container bg-white section-container">
+						<div class="row gy-0">
+							<div class="col-md-4 p-5 pb-0 pb-md-5 text-end">
+								<h6>Hola! Me llamo</h6>
+								<h1>Felipe Guajardo</h1>
+							</div>
+							<div class="col-md-8 p-5">
+								<p>
+									Soy estudiante del curso Full-Stack JavaScript, generación 26,
+									en Academia Desafío Latam. He incursionado antes en el mundo
+									de la programación, pero en este curso es la primera vez que
+									trato con temas de desarrollo web. Una vez terminado el
+									programa, espero desempeñarme como desarrollador backend.
+									<br /><br />
+									Geek de Star Wars.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="separator"></div>
+				<section>
+					<a href="" id="skills" class="nav-anchor"></a>
+					<div class="container bg-white section-container">
+						<div class="row gy-0">
+							<div class="col-md-4 p-5 pb-0 pb-md-5 text-end">
+								<h3>Mis Habilidades</h3>
+							</div>
+							<div class="col-md-8 p-5">
+								<div>
+									<h5>Lua</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-lua" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>C</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-c" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>C++</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-cpp" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>C#</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-cs" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>JavaScript</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-js" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>TypeScript</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-ts" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<div class="mt-2">
+									<h5>Go</h5>
+									<div class="progress-outline">
+										<div class="progress">
+											<div id="progress-go" class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="separator"></div>
+				<section>
+					<a href="" id="challenges" class="nav-anchor"></a>
+					<div class="container bg-white section-container">
+						<div class="row gy-0">
+							<div class="col-md-4 p-5 pb-0 pb-md-5 text-end">
+								<h3>Desafíos anteriores</h3>
+							</div>
+							<div class="col-md-8 p-5">
+								<div
+									class="row row-cols-1 row-cols-md-2 gy-3 gx-3 justify-content-center"
+								>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Desafío 1</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/challenges/challenge1.png"
+													alt="Foto desafio curriculum"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/U1-D1-Curriculum"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Curriculum Vitae</h5>
+												<p class="card-text">Módulo HTML</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Desafío 2</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/challenges/challenge2.png"
+													alt="Foto desafio landing page"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/U1-D2-LandingPage"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Landing Page</h5>
+												<p class="card-text">Módulo CSS</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Desafío 3</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/challenges/challenge3.png"
+													alt="Foto desafio iguana"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/U1-D3-Iguana"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Iguana Page</h5>
+												<p class="card-text">Módulo Posicionamiento</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Desafío 4</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/challenges/challenge4.png"
+													alt="Foto desafio cuppon"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/U1-D4-Cuppon"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Cuppon</h5>
+												<p class="card-text">Módulo Bootstrap</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Desafío 5</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/challenges/challenge5.png"
+													alt="Foto desafio github"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/fdsw-github"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Terminal, Git y Github</h5>
+												<p class="card-text">Módulo Github</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="separator"></div>
+				<section>
+					<a href="" id="projects" class="nav-anchor"></a>
+					<div class="container bg-white section-container">
+						<div class="row gy-0">
+							<div class="col-md-4 p-5 pb-0 pb-md-5 text-end">
+								<h3>Mis Proyectos</h3>
+							</div>
+							<div class="col-md-8 p-5">
+								<div
+									class="row row-cols-1 row-cols-md-2 gy-3 gx-3 justify-content-center"
+								>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">MovieBattles II</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/projects/mb2logo.png"
+													alt="Foto logo moviebattles 2"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://www.moviebattles.org/"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-solid fa-link text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Programmer/Mapper</h5>
+												<p class="card-text">
+													Mod de conversión total del juego Star Wars: Jedi
+													Knight Jedi Academy
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="card text-center">
+											<div class="card-header">Tabletop Simulator Scripts</div>
+											<div class="link-img-github position-relative">
+												<img
+													class="card-img-top"
+													src="assets/img/projects/ttslogo.png"
+													alt="Foto logo tabletop simulator"
+												/>
+												<div
+													class="link-img-github-after w-100 h-100 position-absolute"
+												>
+													<a
+														target="_blank"
+														rel="noopener noreferrer"
+														href="https://github.com/Pipexlul/tts-projects"
+													>
+														<i
+															class="link-img-github-icon position-absolute fa-brands fa-github text-dark fa-5x"
+														></i>
+													</a>
+												</div>
+											</div>
+											<div class="card-body">
+												<h5 class="card-title">Programmer</h5>
+												<p class="card-text">
+													Scripts para el funcionamiento del modo de juego
+													"Imperial Assault" en Tabletop Simulator
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<div class="separator"></div>
+			<footer>
+				<div class="container-fluid footer-container">
+					<div
+						class="row row-cols-1 row-cols-md-2 justify-content-center text-center align-items-center"
+					>
+						<div class="col">
+							<h5 class="fw-semibold">Felipe Guajardo &copy; 2022</h5>
+						</div>
+						<div class="col">
+							<div class="d-flex justify-content-center">
+								<a
+									href="https://github.com/Pipexlul"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i class="fa-brands fa-github-alt fa-3x text-dark"></i>
+								</a>
+								<a
+									href="https://www.linkedin.com/in/felipe-guajardo-39233523a/"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="ms-4"
+								>
+									<i class="fa-brands fa-linkedin fa-3x text-dark"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
